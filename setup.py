@@ -35,7 +35,8 @@ setup(name='Products.SmartColorWidget',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'plone.browserlayer'
+          'plone.browserlayer',
+          'collective.js.jquery',
           ],
       entry_points="""
       # -*- Entry points: -*-

@@ -18,10 +18,7 @@ enable it.
 Requirements
 ============
 
-* Plone 3.1+,
-
-* Plone 3.0 users must add ``collective.js.jquery`` to the eggs list in their
-  ``buildout.cfg``.
+* Plone 4.0 (for Plone 3.x, use 1.1.x releases)
 
 
 Installation
@@ -31,6 +28,7 @@ Installation
    or easy_install
 
 2. Install the skin in your Plone Site with the Quickinstaller tool
+
 
 Usage
 =====

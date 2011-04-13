@@ -3,8 +3,9 @@
 """Various Z3 style view/pages for SmartColorWidget"""
 
 from Acquisition import aq_inner
-from Globals import DTMLFile
+from App.special_dtml import DTMLFile
 from Products.Five.browser import BrowserView
+
 
 class WidgetStylesheet(BrowserView):
 
