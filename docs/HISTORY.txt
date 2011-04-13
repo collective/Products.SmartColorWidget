@@ -7,9 +7,6 @@ Changelog
 * Avoid warnings under Plone 4.0+
   [thomasdesvenain]
 
-* Depends on collective.js.jquery.
-  [thomasdesvenain]
-
 1.1.3
 -----
 

@@ -36,7 +36,6 @@ setup(name='Products.SmartColorWidget',
           'setuptools',
           # -*- Extra requirements: -*-
           'plone.browserlayer',
-          'collective.js.jquery',
           ],
       entry_points="""
       # -*- Entry points: -*-
