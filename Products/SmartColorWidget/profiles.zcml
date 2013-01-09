@@ -12,6 +12,15 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="SmartColorWidget: uninstall"
+      directory="profiles/uninstall"
+      description="Remove SmartColorWidget"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
   <genericsetup:upgradeStep
      profile="Products.SmartColorWidget:default"
      source="1.0.3"

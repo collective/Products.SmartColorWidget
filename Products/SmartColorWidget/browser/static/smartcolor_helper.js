@@ -313,9 +313,9 @@ function HSL_to_RGB(H, S, L){
      S = S / 100;
      L = L / 100;
 		
-	if ( S == 0 )                       //HSL values = 0 ÷ 1
+	if ( S == 0 )                       //HSL values = 0 ï¿½ 1
 	{
-	   R = L * 255;                      //RGB results = 0 ÷ 255
+	   R = L * 255;                      //RGB results = 0 ï¿½ 255
 	   G = L * 255;
 	   B = L * 255;
 	}
@@ -344,7 +344,7 @@ function HSL_to_RGB(H, S, L){
 // Convert RGB Color to HSL values
 function RGB_to_HSL(R, G, B){
 	
-	var_R = ( R / 255 );                 //Where RGB values = 0 ÷ 255
+	var_R = ( R / 255 );                 //Where RGB values = 0 ï¿½ 255
 	var_G = ( G / 255 );
 	var_B = ( B / 255 );
 	
@@ -356,7 +356,7 @@ function RGB_to_HSL(R, G, B){
 	
 	if ( del_Max == 0 )                     //This is a gray, no chroma...
 	{
-	   H = 0;                                //HSL results = 0 ÷ 1
+	   H = 0;                                //HSL results = 0 ï¿½ 1
 	   S = 0;
 	}
 	else                                    //Chromatic data...
@@ -976,7 +976,14 @@ function loadSmartColorPickers() {
   jQuery('.smartcolor-container').each(function(){
      reg=new RegExp("(parent_)", "g");
      name = jQuery(this).attr('id').replace(reg,"");
-     value= jQuery('#valuefor_' + name , this).val();  
+     value= jQuery('#valuefor_' + name , this).val();
+	 var labels = {
+	 	editColor: jQuery('.smartcolor-container').attr('data-label-edit-color'),
+		restore: jQuery('.smartcolor-container').attr('data-label-restore'),
+		lightness: jQuery('.smartcolor-container').attr('data-label-lightness'),
+		hue: jQuery('.smartcolor-container').attr('data-label-hue'),
+		saturation: jQuery('.smartcolor-container').attr('data-label-saturation')
+		};
      widget = '\
   \
   <div class="smartcolor_render">\
@@ -1001,12 +1008,12 @@ function loadSmartColorPickers() {
 		<div> \
 		  <div class="smartcolor_edit_button"\
 		       id="smartcolor_edit_button_' + name + '">\
-							Edit Color\
+							' + labels.editColor + '\
 			</div>\
 			<div class="smartcolor_restore_button"\
 				  style="display: none"\
 				  id="smartcolor_restore_button_' + name + '">\
-							Restore\
+							' + labels.restore + '\
 			</div>\
 		</div>\
 	</div>\
@@ -1041,7 +1048,7 @@ function loadSmartColorPickers() {
 		<div class="picker-inputs"\
 		     id="picker-inputs_' + name + '">\
   		<div class="discreet">\
-  			Lightness\
+  			' + labels.lightness + '\
   		</div>\
 			<div>\
 				<input type="text"\
@@ -1050,7 +1057,7 @@ function loadSmartColorPickers() {
                value="0"/>\
 			</div>\
 			<div class="discreet">\
-				Hue\
+				' + labels.hue + '\
 			</div>\
 			<div>\
 				<input type="text"\
@@ -1059,7 +1066,7 @@ function loadSmartColorPickers() {
                value="0"/>\
 			</div>\
 			<div class="discreet">\
-				Saturation\
+				' + labels.saturation + '\
 			</div>\
 			<div>\
 				<input type="text"\

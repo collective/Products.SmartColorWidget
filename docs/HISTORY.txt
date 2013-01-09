@@ -4,7 +4,14 @@ Changelog
 1.1.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added uninstall step
+  [keul]
+- Widget were restoring the field default on failed form validation
+  [keul]
+- Widget labels are now translable
+  [keul]
+- Added italian stranslation
+  [keul] 
 
 
 1.1.4 (2011-05-03)

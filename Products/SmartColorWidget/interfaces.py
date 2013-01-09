@@ -6,4 +6,3 @@ from zope.interface import Interface
 
 class ISmartBrowserWidgetLayer(Interface):
     """Layer marker interface"""
-    pass
