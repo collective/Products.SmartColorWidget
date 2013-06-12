@@ -2,13 +2,17 @@
 # $Id: upgrades.py 9248 2009-11-11 09:51:09Z glenfant $
 """GenericSetup upgrade steps"""
 
-from zope.app.component.hooks import getSite
+try:
+    from zope.component.hooks import getSite
+    getSite  # Pyflakes
+except ImportError:  # Plone < 4.3
+    from zope.app.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
-import config
 
 ###
 ## Utilities
 ###
+
 
 class NotInstalledComponent(LookupError):
     def __init__(self, cpt_name):
@@ -20,6 +24,7 @@ class NotInstalledComponent(LookupError):
                " You can't run its upgrade steps."
                % self.cpt_name)
         return msg
+
 
 class IfInstalled(object):
     def __init__(self, prod_name='SmartColorWidget'):
@@ -46,6 +51,7 @@ if_scw_instaled = IfInstalled()
 ## Upgrade steps handlers
 ###
 
+
 @if_scw_instaled
 def steps_1_0_3_to_1_1_0(setuptool):
     """Removing CMF skins layer and adding browserlayer marker"""
@@ -56,6 +62,7 @@ def steps_1_0_3_to_1_1_0(setuptool):
 ###
 ## Sub steps
 ###
+
 
 def removeSkinsLayer(setuptool):
     """Removing CMF skins layer"""
@@ -70,6 +77,7 @@ def removeSkinsLayer(setuptool):
             values.remove(to_delete)
             portal_skins.selections[skin] = ','.join(values)
     return
+
 
 def registerBrowserLayer(setuptool):
     """Adding browserlayer marker"""

@@ -11,7 +11,9 @@ Changelog
 - Widget labels are now translable
   [keul]
 - Added italian stranslation
-  [keul] 
+  [keul]
+- Fix the imports for Plone 4.3
+  [mpeeters]
 
 
 1.1.4 (2011-05-03)
