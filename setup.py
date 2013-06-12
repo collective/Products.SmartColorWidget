@@ -9,7 +9,7 @@ def _textFromPath(*names):
 version = _textFromPath('Products', 'SmartColorWidget', 'version.txt')
 
 long_description = '\n\n'.join(
-    (_textFromPath('README.txt'), _textFromPath('docs', 'HISTORY.txt'))
+    (_textFromPath('README.rst'), _textFromPath('docs', 'HISTORY.txt'))
      )
 
 setup(name='Products.SmartColorWidget',
