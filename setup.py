@@ -9,14 +9,10 @@ def _textFromPath(*names):
 
 version = _textFromPath('Products', 'SmartColorWidget', 'version.txt')
 
-long_description = '\n\n'.join(
-    (_textFromPath('README.rst'), _textFromPath('docs', 'HISTORY.txt'))
-)
-
 setup(name='Products.SmartColorWidget',
       version=version,
       description="Smart color picker widget for Archetypes",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
       open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
           "Framework :: Plone",
