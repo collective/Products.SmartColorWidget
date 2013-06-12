@@ -2,7 +2,11 @@
 # $Id: upgrades.py 9248 2009-11-11 09:51:09Z glenfant $
 """GenericSetup upgrade steps"""
 
-from zope.app.component.hooks import getSite
+try:
+    from zope.component.hooks import getSite
+    getSite  # Pyflakes
+except ImportError:  # Plone < 4.3
+    from zope.app.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
 import config
 
