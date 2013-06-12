@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
+
 def _textFromPath(*names):
     here = os.path.dirname(os.path.abspath(__file__))
     path = os.path.join(here, *names)
@@ -10,14 +11,13 @@ version = _textFromPath('Products', 'SmartColorWidget', 'version.txt')
 
 long_description = '\n\n'.join(
     (_textFromPath('README.rst'), _textFromPath('docs', 'HISTORY.txt'))
-     )
+)
 
 setup(name='Products.SmartColorWidget',
       version=version,
       description="Smart color picker widget for Archetypes",
       long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
           "Framework :: Plone",
           "Framework :: Plone :: 4.0",
@@ -25,7 +25,7 @@ setup(name='Products.SmartColorWidget',
           "Framework :: Plone :: 4.2",
           "Programming Language :: Python",
           "Topic :: Software Development :: Libraries :: Python Modules",
-          ],
+      ],
       keywords='plone widget colorpicker',
       author='Ingeniweb',
       author_email='support@ingeniweb.com',
@@ -39,7 +39,7 @@ setup(name='Products.SmartColorWidget',
           'setuptools',
           # -*- Extra requirements: -*-
           'plone.browserlayer',
-          ],
+      ],
       entry_points="""
       # -*- Entry points: -*-
       """,
